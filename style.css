@@ -113,8 +113,8 @@ img {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: calc(100svh - 86px);
-  padding: clamp(36px, 5vh, 58px) 0 clamp(38px, 5vh, 60px);
+  min-height: calc(84svh - 86px);
+  padding: clamp(4px, 1vh, 14px) 0 clamp(6px, 1.2vh, 16px);
   background: #fff;
 }
 
@@ -122,7 +122,7 @@ img {
   position: relative;
   display: grid;
   align-items: center;
-  min-height: min(560px, calc(100svh - 190px));
+  min-height: min(420px, calc(84svh - 126px));
 }
 
 .hero-copy {
@@ -146,7 +146,7 @@ img {
 .hero-person {
   width: 100%;
   height: 100%;
-  min-height: min(520px, calc(100svh - 190px));
+  min-height: min(410px, calc(84svh - 126px));
   object-fit: contain;
   object-position: center;
   border-radius: 0 0 0 90px;
@@ -289,6 +289,11 @@ img {
   animation-delay: 1s;
 }
 
+.hero-actions .btn {
+  min-width: 170px;
+  text-align: center;
+}
+
 .section {
   padding: 48px 0;
 }
@@ -317,13 +322,22 @@ img {
 }
 
 .concept-cards article {
-  padding: 30px;
+  padding: 22px 24px;
 }
 
 .concept-cards span {
   color: var(--blue);
   font-weight: 900;
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+.concept-cards h3 {
+  margin: 12px 0 10px;
+}
+
+.concept-cards p {
+  margin: 0;
+  line-height: 1.65;
 }
 
 .trainer-section {
@@ -774,6 +788,15 @@ img {
   text-align: center;
 }
 
+#reserve .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  padding: 17px 34px;
+  font-size: 1.08rem;
+}
+
 .faq-section {
   background: #fff;
 }
@@ -818,11 +841,15 @@ img {
 .map-placeholder {
   min-height: 320px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #e6f9ff, #fffde0);
-  display: grid;
-  place-items: center;
-  color: var(--deep);
-  font-weight: 900;
+  overflow: hidden;
+  background: #e6f9ff;
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  display: block;
 }
 
 .fixed-reserve {
@@ -830,12 +857,17 @@ img {
   right: 22px;
   bottom: 22px;
   z-index: 60;
+  width: 110px;
+  height: 110px;
+  display: none;
+  place-items: center;
   background: linear-gradient(135deg, var(--blue), var(--deep));
   color: #fff;
-  border-radius: 999px;
-  padding: 16px 24px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
   font-weight: 900;
-  box-shadow: 0 16px 32px rgba(0, 102, 178, .28);
+  box-shadow: 0 14px 30px rgba(0, 102, 178, .18);
 }
 
 footer {
@@ -929,7 +961,7 @@ footer {
 
   .hero {
     min-height: auto;
-    padding: 14px 0 0;
+    padding: 14px 0 56px;
     background: #fff;
   }
 
@@ -948,10 +980,10 @@ footer {
 
   .hero-visual {
     position: absolute;
-    inset: 0 -18% auto auto;
+    inset: 46px -18% auto auto;
     z-index: 1;
     width: 78%;
-    height: 78%;
+    height: calc(100% - 116px);
     min-height: 0;
     margin-right: 0;
     opacity: .86;
@@ -982,7 +1014,7 @@ footer {
   }
 
   .hero .lead {
-    width: min(300px, 72%);
+    width: min(240px, 58%);
     font-size: .78rem;
     line-height: 1.65;
   }
@@ -1006,11 +1038,15 @@ footer {
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 54px;
+    bottom: -58px;
     width: 100%;
     margin-top: 0;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-actions .btn.primary {
+    grid-column: 1 / -1;
   }
 
   .hero-actions .btn {
@@ -1094,6 +1130,12 @@ footer {
     align-items: flex-start;
   }
 
+  .plan-head p {
+    font-size: clamp(.76rem, 3vw, .9rem);
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
   .trainer-image img {
     height: auto;
   }
@@ -1101,6 +1143,11 @@ footer {
   .trainer-result {
     grid-column: auto;
     padding: 22px 0 0;
+  }
+
+  .trainer-result .role {
+    font-size: clamp(.78rem, 3vw, .9rem);
+    white-space: nowrap;
   }
 
   .trainer-result img {
@@ -1114,15 +1161,24 @@ footer {
   }
 
   .fixed-reserve {
+    display: grid;
     right: 14px;
     bottom: 14px;
-    padding: 13px 18px;
+    width: 92px;
+    height: 92px;
+    padding: 0;
+    font-size: .86rem;
   }
 
   .plan th,
   .plan td {
-    font-size: .9rem;
-    padding: 12px 8px;
+    font-size: clamp(.72rem, 2.8vw, .86rem);
+    padding: 12px 6px;
+    white-space: nowrap;
+  }
+
+  .plan strong {
+    font-size: clamp(1rem, 4.4vw, 1.35rem);
   }
 
   .plan table {
