@@ -876,6 +876,23 @@ footer {
   color: #fff;
 }
 
+.footer-social {
+  margin: 14px 0;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+}
+
+.footer-social img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
 .section-reveal {
   opacity: 0;
   transform: translateY(32px);
